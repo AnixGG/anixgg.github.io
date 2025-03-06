@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(Не)уязвимый</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: sans-serif;
+            background: white;
+        }
+        header {
+            background: linear-gradient(90deg, #0066cc, #5500cc);
+            color: white;
+            padding: 40px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        section {
+            padding: 40px;
+        }
+        section:facts {
+            text-align: right;
+        }
+        img {
+            width: 50%;
+            max-width: 400px;
+            border-radius: 20px;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            background: #0066cc;
+            color: white;
+            border: None;
+            border-radius: 5px;
+            padding: 12px;
+            margin: 5px;
+        }
+        ul li:hover{
+            transform: scale(1.05);
+        }
+
+        a {
+            background: red;
+            padding: 12px 24px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: None;
+        }
+
+        a:hover {
+            background: orange;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            color: white;
+            border:None;
+            border-radius: 5px;
+            transition: background 0.3s;
+            background: gray;
+        }
+
+        button:hover{
+            background: #6600cc;
+
+        }
+
+        footer {
+            padding: 20px;
+        }
+
+        @media (min-width: 1024px) {
+            section {
+                padding: 40px;
+            }
+            img {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 30px;
+            }
+            img {
+                width: 80%;
+            }
+            ul{
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Неуязвимый - Марк Грейсон</h1>
+    </header>
+    <section>
+        <img id="invincible" src="https://media.2x2tv.ru/content/images/size/w1440h1440/2021/03/MV5BM2NhNmZiZjgtNmEzZi00YjYyLTg4ZDMtOGIyOWYxMmIzYmViXkEyXkFqcGdeQWFybm8@._V1_.jpg">
+        <h2>О персонаже</h2>
+        <p>Марк Грейсон — молодой супергерой, известный как Неуязвимый, сын Омни-Мэна и защитник Земли.</p>
+        <h3>Некоторые факты</h3>
+        <ul>
+            <li>Сын Омни-Мэна</li>
+            <li>Наследник силы Вилтрумитов</li>
+            <li>Умеет летать</li>
+        </ul>
+        <p>Подробнее </p>
+        <a href="https://www.kinopoisk.ru/series/1171895/">Кинопоиск</a>
+        <a href="https://ru.wikipedia.org/wiki/Неуязвимый_(мультсериал)">Википедия</a>
+    </section>
+
+    <script>
+        function changeBackground(){
+            document.body.style.background = document.body.style.background === 'black' ? 'white' : 'black';
+            document.body.style.color = document.body.style.color === 'white' ? 'black' : 'white';
+            const image = document.getElementById("invincible");
+            if (document.body.style.color === 'white'){
+                image.src = "https://media.2x2tv.ru/content/images/size/w1440h1080/2025/02/invincible3seasoncoveeeer.jpg"
+            } else{
+                image.src = "https://media.2x2tv.ru/content/images/size/w1440h1440/2021/03/MV5BM2NhNmZiZjgtNmEzZi00YjYyLTg4ZDMtOGIyOWYxMmIzYmViXkEyXkFqcGdeQWFybm8@._V1_.jpg"
+            }
+        }
+    </script>
+    <article>
+        <button onclick="changeBackground()">
+            changeBackground
+        </button>
+    </article>
+    <footer>
+        <p>2025, Мой сайт</p>
+    </footer>
+</body>
+</html>
